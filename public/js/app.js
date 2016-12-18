@@ -17,6 +17,13 @@ console.log(source);
 
 	contentContainer.appendChild(title);
 
+
+	//gets author of post
+	let author = document.createElement('p');
+	author.innerHTML = source.data.children[i].data.author;
+
+	contentContainer.appendChild(title);
+	contentContainer.appendChild(author);
 	}
 }
 
