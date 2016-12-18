@@ -10,20 +10,22 @@ let source = JSON.parse(this.responseText);
 console.log(source);
 
 	for (var i = 0; i < source.data.children.length; i++) {
+		
+	//create child box for each post
+	let container = document.createElement('div');
+	container.id = 'container';
+	contentContainer.appendChild(container);
 
 	//gets title of post
 	let title = document.createElement('h2'); 
 	title.innerHTML = source.data.children[i].data.title;
 
-	contentContainer.appendChild(title);
-
-
 	//gets author of post
 	let author = document.createElement('p');
 	author.innerHTML = source.data.children[i].data.author;
 
-	contentContainer.appendChild(title);
-	contentContainer.appendChild(author);
+	container.appendChild(title);
+	container.appendChild(author);
 	}
 }
 
