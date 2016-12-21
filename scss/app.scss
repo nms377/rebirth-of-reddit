@@ -1,4 +1,9 @@
+//imports
 @import "./partials/reset";
+
+//variables
+$padding: 2.5%;
+$lineHeight: 2em;
 
 body{
 	background-color: red;
@@ -7,17 +12,22 @@ body{
 }
 
 #contentContainer{
+	display: flex;
+	flex-flow: column wrap;
 	background-color: lime;
+	align-items: center;
+	margin-top: 2.5%;
 }
 
 	.container{
 		display: flex;
-		flex-flow: row wrap;
-		justify-content: center;
-		width: 95%;
+		flex-flow: column wrap;
+		align-items: center;
+		width: 75%;
 		height: auto;
+		padding: $padding;
 		background-color: purple;
-			border: solid 1px pink;
+		border: solid 1px pink;
 
 		.imageContainer{
 			flex: 0 0 25%;
@@ -32,9 +42,19 @@ body{
 					background-size: cover;
 			}
 		}
-		
+
 		.title, .author{
 			order: 1;
+			width: 70%;
+			line-height: $lineHeight;
+			
+		}
+
+		.title{
+			font-size: 2.5em;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			overflow: hidden;
 		}
 
 	}
