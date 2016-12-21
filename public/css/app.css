@@ -51,14 +51,19 @@ body {
   color: pink; }
 
 #contentContainer {
-  background-color: lime; }
+  display: flex;
+  flex-flow: column wrap;
+  background-color: lime;
+  align-items: center;
+  margin-top: 2.5%; }
 
 .container {
   display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  width: 95%;
+  flex-flow: column wrap;
+  align-items: center;
+  width: 75%;
   height: auto;
+  padding: 2.5%;
   background-color: purple;
   border: solid 1px pink; }
   .container .imageContainer {
@@ -71,4 +76,11 @@ body {
       background-repeat: no-repeat;
       background-size: cover; }
   .container .title, .container .author {
-    order: 1; }
+    order: 1;
+    width: 70%;
+    line-height: 2em; }
+  .container .title {
+    font-size: 2.5em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden; }
