@@ -13,7 +13,7 @@ console.log(source);
 
 	//create child box for each post
 	var container = document.createElement('div');
-	container.id = 'container';
+	container.className = 'container';
 	contentContainer.appendChild(container);
 
 	//gets image from post
@@ -28,11 +28,13 @@ console.log(source);
 
 
 	//gets title of post
-	let title = document.createElement('h2'); 
+	let title = document.createElement('p');
+	title.className = 'title';
 	title.innerHTML = source.data.children[i].data.title;
 
 	//gets author of post
 	let author = document.createElement('p');
+	author.className = 'author';
 	author.innerHTML = source.data.children[i].data.author;
 	
 	imageContainer.appendChild(image);
