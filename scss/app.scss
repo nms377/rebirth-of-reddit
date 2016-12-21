@@ -1,11 +1,40 @@
+@import "./partials/reset";
+
 body{
 	background-color: red;
+	background-size: cover;
 	color: pink;
 }
 
-#image{
-	width: 150px;
-	height: 150px;
-	background-repeat: no-repeat;
-	background-size: contain;
+#contentContainer{
+	background-color: lime;
 }
+
+	.container{
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: center;
+		width: 95%;
+		height: auto;
+		background-color: purple;
+			border: solid 1px pink;
+
+		.imageContainer{
+			flex: 0 0 25%;
+			order: 0;
+			background-color: yellow;
+			// width: 75%;
+			// height: 25%;
+				#image{
+					width: 640px;
+					height: 320px;
+					background-repeat: no-repeat;
+					background-size: cover;
+			}
+		}
+		
+		.title, .author{
+			order: 1;
+		}
+
+	}
