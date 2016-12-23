@@ -23,26 +23,32 @@ console.log(source);
 	image.style.backgroundImage = `url('${urls}')`;
 
 	//gets title of post
-	let title = document.createElement('div');
+	let title = document.createElement('h1');
 	title.className = 'title';
 	title.innerHTML = source.data.children[i].data.title;
 
 	//gets author of post
-	let author = document.createElement('div');
+	let author = document.createElement('span');
 	author.className = 'author';
-	author.innerHTML = 'created by ' + source.data.children[i].data.author;
+	author.innerHTML = `by ${source.data.children[i].data.author} &#9679`;
 
 	//gets date post was created
-	let date = document.createElement('div');
+	let date = document.createElement('span');
 	date.className = 'date';
 	let postDate = moment(source.data.children[i].data.created_utc, 'X').fromNow();
-	console.log(postDate);
-	date.innerHTML = postDate;
+	date.innerHTML = postDate +' &#9679';
+
+	//gets number of comments
+	let comments = document.createElement('span');
+	comments.className = 'comments';
+	comments.innerHTML = `${source.data.children[i].data.num_comments} comments`;
+
 
 	container.appendChild(image);
 	container.appendChild(title);
 	container.appendChild(author);
 	container.appendChild(date);
+	container.appendChild(comments);
 	}
 
 }
