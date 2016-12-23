@@ -10,7 +10,7 @@ gulp.task('scss', () => {
 
 gulp.task('connect', function() {
 	gulpConnect.server({
-		root: 'public',
+		root: './public',
 		livereload: true
 	})
 })
@@ -22,6 +22,7 @@ gulp.task('livereload', function () {
 
 gulp.task('watch', ['livereload'], () => {
 	gulp.watch('./scss/**/*.scss', ['scss'])
+	gulp.watch('./public/**/*', ['livereload']);
 })
 
 gulp.task('default', ['connect', 'scss', 'watch']);
