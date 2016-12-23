@@ -19,28 +19,30 @@ console.log(source);
 	//gets image from post
 	let image = document.createElement('img');
 	image.id = 'image';
-	let imageContainer = document.createElement('div');
-	imageContainer.className = 'imageContainer';
 	let urls = source.data.children[i].data.thumbnail;
-	console.log(urls, 'urls');
 	image.style.backgroundImage = `url('${urls}')`;
 
-
-
 	//gets title of post
-	let title = document.createElement('p');
+	let title = document.createElement('div');
 	title.className = 'title';
 	title.innerHTML = source.data.children[i].data.title;
 
 	//gets author of post
-	let author = document.createElement('p');
+	let author = document.createElement('div');
 	author.className = 'author';
-	author.innerHTML = source.data.children[i].data.author;
-	
-	imageContainer.appendChild(image);
-	container.appendChild(imageContainer);
+	author.innerHTML = 'created by ' + source.data.children[i].data.author;
+
+	//gets date post was created
+	let date = document.createElement('div');
+	date.className = 'date';
+	let postDate = moment(source.data.children[i].data.created_utc, 'X').fromNow();
+	console.log(postDate);
+	date.innerHTML = postDate;
+
+	container.appendChild(image);
 	container.appendChild(title);
 	container.appendChild(author);
+	container.appendChild(date);
 	}
 
 }
