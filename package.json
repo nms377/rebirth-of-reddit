@@ -15,7 +15,7 @@
   "bugs": {
     "url": "https://github.com/nms377/rebirth-of-reddit/issues"
   },
-  "homepage": "https://nms377.github.io/rebirth-of-reddit/",
+  "homepage": "https://github.com/nms377/rebirth-of-reddit#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-connect": "^5.0.0",
