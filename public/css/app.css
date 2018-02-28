@@ -48,7 +48,8 @@ table {
 body {
   font-family: 'Lato', sans-serif;
   background-image: url("/assets/bg.jpg");
-  color: black; }
+  color: black;
+  margin-bottom: .125rem; }
 
 header {
   display: flex;
@@ -66,15 +67,13 @@ header {
     margin-left: 10px; }
   header #plus {
     flex: 0 0 auto;
-    order: 0;
     align-self: center;
-    font-size: 2em;
+    font-size: 2rem;
     text-align: center;
     color: #b74326;
-    margin-right: 20px;
-    border: 1px solid orange;
-    height: 25px;
-    width: 25px; }
+    margin-right: 1.25rem;
+    border: 2px solid orange;
+    width: 2rem; }
 
 #menu {
   font-family: 'Oswald', sans-serif;
@@ -91,10 +90,10 @@ header {
     box-sizing: border-box;
     flex: 0 0 auto;
     display: inline-block;
-    height: 40px;
+    height: 2.5rem;
     width: 33%;
     text-align: center;
-    padding-top: 10px; }
+    padding-top: .625rem; }
   #menu #random, #menu #myBoards {
     border-right: 1px solid #969696; }
 
@@ -107,44 +106,38 @@ header {
 .container {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
+  /*justify-content: space-around;*/
   display: inline-block;
   width: 350px;
   height: 400px;
-  padding: 20px 15px 0 15px;
+  padding: 20px 1rem 0 1rem;
   background-color: white;
   margin: 1% 0 1.5% 0; }
   .container #image {
-    flex: 0 1 auto;
+    flex: 0 0 auto;
     order: 0;
-    align-self: center;
+    /*align-self: center;*/
     width: 345px;
     height: 200px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center; }
+  .container .titleContainer {
+    max-height: 70px;
+    overflow-wrap: normal;
+    white-space: normal;
+    overflow: hidden;
+    /*text-overflow: ellipsis;*/
+    margin-bottom: .25rem; }
   .container .title {
     font-family: 'Oswald', sans-serif;
     order: 1;
-    width: 75%;
-    line-height: 2em;
+    width: 345px;
+    line-height: 2rem;
     font-size: 1.5em;
-    overflow-wrap: normal;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis; }
-  .container .author {
-    flex: 0 0 auto;
+    text-align: justify; }
+  .container .author, .container .date, .container .comments {
+    flex: 0 0 33%;
     order: 2;
-    background-color: yellow;
-    padding-right: 10px; }
-  .container .date {
-    flex: 0 0 auto;
-    order: 2;
-    background-color: green;
-    padding-right: 10px; }
-  .container .comments {
-    flex: 0 0 auto;
-    order: 2;
-    background-color: red;
-    padding-right: 10px; }
+    padding-right: .375rem;
+    color: gray; }
