@@ -122,6 +122,10 @@ header{
 			content: " \2022";
 			word-spacing: .625rem;
 		}
+
+		#random:hover, #myBoards:hover, #getTheApp:hover{
+			color: red;
+		}
 	}
 }
 
@@ -141,7 +145,7 @@ header{
 	}
 }
 
-.container{
+.container {
 	display: flex;
 	flex-flow: row wrap;
 	display: inline-block;
@@ -160,7 +164,7 @@ header{
 		margin: .625rem;
 	}
 
-	#image{
+	#image {
 		flex: 0 0 auto;
 		order: 0;
 		/*align-self: center;*/
@@ -204,5 +208,17 @@ header{
 		order: 2;
 		padding-right: .375rem;
 		color: rgb(128,128,128);
+	}
+}
+
+@media screen and (min-width: 600px){
+	.container:hover {
+		border: 4px solid orange;
+	}
+
+	#plus:hover {
+		color: rgb(255,255,255);
+		border: 2px solid red;
+		background-color: red;
 	}
 }

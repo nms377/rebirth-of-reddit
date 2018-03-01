@@ -129,7 +129,9 @@ header {
   @media screen and (min-width: 600px) {
     #menu #random:after, #menu #myBoards:after {
       content: " \2022";
-      word-spacing: .625rem; } }
+      word-spacing: .625rem; }
+    #menu #random:hover, #menu #myBoards:hover, #menu #getTheApp:hover {
+      color: red; } }
 
 #contentContainer {
   display: flex;
@@ -194,3 +196,11 @@ header {
     order: 2;
     padding-right: .375rem;
     color: gray; }
+
+@media screen and (min-width: 600px) {
+  .container:hover {
+    border: 4px solid orange; }
+  #plus:hover {
+    color: white;
+    border: 2px solid red;
+    background-color: red; } }
