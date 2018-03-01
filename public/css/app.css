@@ -46,6 +46,8 @@ table {
   border-spacing: 0; }
 
 body {
+  display: flex;
+  flex-flow: column nowrap;
   font-family: 'Lato', sans-serif;
   background-image: url("/assets/bg.jpg");
   color: black;
@@ -54,17 +56,35 @@ body {
 header {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
   width: 100%;
   height: 75px;
-  background-color: white; }
+  background-color: white;
+  position: relative; }
+  header #box {
+    flex: 1 0 auto;
+    height: inherit;
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center; }
+  @media screen and (min-width: 600px) {
+    header #headerbg {
+      height: inherit;
+      background: no-repeat center url("/assets/header_bg.svg");
+      position: absolute;
+      width: 100%; } }
   header #logo {
     flex: 1 0 auto;
-    order: 0;
-    display: inline-block;
     height: inherit;
-    background: url("/assets/logo.svg") no-repeat left;
-    margin-left: 10px; }
+    background: url("/assets/logo.svg") no-repeat center; }
+    @media screen and (max-width: 600px) {
+      header #logo {
+        margin-left: 10px;
+        background: url("/assets/logo.svg") no-repeat left; } }
+    @media screen and (min-width: 600px) {
+      header #logo {
+        position: absolute;
+        width: 100%; } }
   header #plus {
     flex: 0 0 auto;
     align-self: center;
@@ -86,6 +106,10 @@ header {
     flex-flow: row wrap;
     justify-content: space-around;
     width: 100%; }
+    @media screen and (min-width: 600px) {
+      #menu #ul {
+        border: 2px solid pink;
+        justify-content: center; } }
   #menu .menuLists {
     box-sizing: border-box;
     flex: 0 0 auto;
@@ -94,25 +118,43 @@ header {
     width: 33%;
     text-align: center;
     padding-top: .625rem; }
-  #menu #random, #menu #myBoards {
-    border-right: 1px solid #969696; }
+    @media screen and (min-width: 600px) {
+      #menu .menuLists {
+        flex: 0 0 6rem; } }
+  @media screen and (max-width: 600px) {
+    #menu #random, #menu #myBoards {
+      border-right: 1px solid #969696; } }
+  @media screen and (min-width: 600px) {
+    #menu #random:after, #menu #myBoards:after {
+      content: " \2022";
+      word-spacing: .625rem; } }
 
 #contentContainer {
   display: flex;
   flex-flow: column wrap;
   align-items: center;
   margin-top: 1%; }
+  @media screen and (min-width: 600px) {
+    #contentContainer {
+      align-self: center;
+      flex-flow: row wrap;
+      justify-content: center;
+      margin-top: 2rem;
+      width: 750px; } }
 
 .container {
   display: flex;
   flex-flow: row wrap;
-  /*justify-content: space-around;*/
   display: inline-block;
   width: 350px;
   height: 400px;
   padding: 20px 1rem 0 1rem;
   background-color: white;
   margin: 1% 0 1.5% 0; }
+  @media screen and (min-width: 600px) {
+    .container {
+      width: 300px;
+      margin: .625rem; } }
   .container #image {
     flex: 0 0 auto;
     order: 0;
@@ -122,20 +164,26 @@ header {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center; }
+    @media screen and (min-width: 600px) {
+      .container #image {
+        width: 100%;
+        height: 150px; } }
   .container .titleContainer {
     max-height: 70px;
     overflow-wrap: normal;
     white-space: normal;
     overflow: hidden;
-    /*text-overflow: ellipsis;*/
     margin-bottom: .25rem; }
   .container .title {
     font-family: 'Oswald', sans-serif;
     order: 1;
-    width: 345px;
+    max-width: 345px;
     line-height: 2rem;
     font-size: 1.5em;
     text-align: justify; }
+    @media screen and (min-width: 600px) {
+      .container .title {
+        width: 300px; } }
   .container .author, .container .date, .container .comments {
     flex: 0 0 33%;
     order: 2;

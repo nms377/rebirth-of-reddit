@@ -7,6 +7,8 @@ $lineHeight: 2rem;
 $marginStd: 1%;
 
 body{
+	display: flex;
+	flex-flow: column nowrap;
 	font-family: 'Lato', sans-serif;
 	background-image: url('/assets/bg.jpg');
 	color: rgb(0,0,0);
@@ -16,18 +18,46 @@ body{
 header{
 	display: flex;
 	flex-flow: row wrap;
-	justify-content: space-around;
 	width: 100%;
 	height: 75px;
 	background-color: rgb(255,255,255);
+	position: relative;
+
+	#box {
+		flex: 1 0 auto;
+		height: inherit;
+		position: relative;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: center;
+	}
+
+	#headerbg {
+		// Medium Large Screen
+		@media screen and (min-width: 600px){
+			height: inherit;
+			background: no-repeat center url('/assets/header_bg.svg');
+			position: absolute;
+			width: 100%;
+		}
+	}
 
 	#logo{	
 		flex: 1 0 auto;
-		order: 0;
-		display: inline-block;
 		height: inherit;
-		background: url('/assets/logo.svg') no-repeat left;
+		background: url('/assets/logo.svg') no-repeat center;
+
+		// Small Screen
+		@media screen and (max-width: 600px){
 		margin-left: 10px;
+		background: url('/assets/logo.svg') no-repeat left;
+		}
+
+		// Medium Large Screen
+		@media screen and (min-width: 600px){
+			position: absolute;
+			width: 100%;
+		}
 	}
 
 	#plus{
@@ -54,6 +84,12 @@ header{
 		flex-flow: row wrap;
 		justify-content: space-around;
 		width: 100%;
+
+		// Medium Large Screen
+		@media screen and (min-width: 600px){
+			border: 2px solid pink;
+			justify-content: center;
+		}
 	}
 
 	.menuLists{
@@ -64,10 +100,26 @@ header{
 		width: 33%;
 		text-align: center;
 		padding-top: .625rem;
+
+		// Medium Large Screen
+		@media screen and (min-width: 600px){
+			flex: 0 0 6rem;
+		}
 	}
 
-	#random, #myBoards{
-		border-right: 1px solid rgb(150,150,150);
+	// Small Screen
+	@media screen and (max-width: 600px){
+		#random, #myBoards{
+			border-right: 1px solid rgb(150,150,150);
+		}
+	}
+
+	// Medium Large Screen
+	@media screen and (min-width: 600px){
+		#random:after, #myBoards:after{
+			content: " \2022";
+			word-spacing: .625rem;
+		}
 	}
 }
 
@@ -76,53 +128,76 @@ header{
 	flex-flow: column wrap;
 	align-items: center;
 	margin-top: $marginStd;
+
+	// Medium Large Screen
+	@media screen and (min-width: 600px){
+		align-self: center;
+		flex-flow: row wrap;
+		justify-content: center;
+		margin-top: 2rem;
+		width: 750px;
+	}
 }
 
-	.container{
-		display: flex;
-		flex-flow: row wrap;
-		/*justify-content: space-around;*/
-		display: inline-block;
-		width: 350px;
-		height: 400px;
-		padding: 20px 1rem 0 1rem;
-		background-color: rgb(255,255,255);
-		margin: $marginStd 0 1.5% 0;
+.container{
+	display: flex;
+	flex-flow: row wrap;
+	display: inline-block;
+	width: 350px;
+	height: 400px;
+	padding: 20px 1rem 0 1rem;
+	background-color: rgb(255,255,255);
+	margin: $marginStd 0 1.5% 0;
 
-		#image{
-			flex: 0 0 auto;
-			order: 0;
-			/*align-self: center;*/
-			width: 345px;
-			height: 200px;
-			background-repeat: no-repeat;
-			background-size: cover;
-			background-position: center;
-		}
-
-		.titleContainer {
-			max-height: 70px;
-			overflow-wrap: normal;
-			white-space: normal;
-			overflow: hidden;
-			/*text-overflow: ellipsis;*/
-			margin-bottom: .25rem;
-		}
-
-		.title{
-			font-family: 'Oswald', sans-serif;
-			order: 1;
-			width: 345px;
-			line-height: $lineHeight;
-			font-size: 1.5em;
-			text-align: justify;
-		}
-
-		.author, .date, .comments{
-			flex: 0 0 33%;
-			order: 2;
-			padding-right: .375rem;
-			color: rgb(128,128,128);
-		}
-
+	// Medium Large Screen
+	@media screen and (min-width: 600px) {
+		width: 300px;
+		margin: .625rem;
 	}
+
+	#image{
+		flex: 0 0 auto;
+		order: 0;
+		/*align-self: center;*/
+		width: 345px;
+		height: 200px;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+
+		// Medium Large Screen
+		@media screen and (min-width: 600px){
+			width: 100%;
+			height: 150px;
+		}
+	}
+
+	.titleContainer {
+		max-height: 70px;
+		overflow-wrap: normal;
+		white-space: normal;
+		overflow: hidden;
+		margin-bottom: .25rem;
+	}
+
+	.title{
+		font-family: 'Oswald', sans-serif;
+		order: 1;
+		max-width: 345px;
+		line-height: $lineHeight;
+		font-size: 1.5em;
+		text-align: justify;
+
+		// Medium Large Screen
+		@media screen and (min-width: 600px){
+			width: 300px;
+		}
+	}
+
+	.author, .date, .comments{
+		flex: 0 0 33%;
+		order: 2;
+		padding-right: .375rem;
+		color: rgb(128,128,128);
+	}
+}
