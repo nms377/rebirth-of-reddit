@@ -49,7 +49,7 @@ body {
   display: flex;
   flex-flow: column nowrap;
   font-family: 'Lato', sans-serif;
-  background-image: url("/assets/bg.jpg");
+  background-image: url("../assets/bg.jpg");
   color: black; }
 
 header {
@@ -69,7 +69,7 @@ header {
   @media screen and (min-width: 481px) {
     header #headerbg {
       height: inherit;
-      background: no-repeat center url("/assets/header_bg.svg");
+      background: no-repeat center url("../assets/header_bg.svg");
       position: absolute;
       width: 100%; } }
   header #logo {
@@ -106,16 +106,16 @@ footer {
   footer #fb {
     height: 1.375rem;
     width: 1.375rem;
-    background: url("/assets/facebook_grey.svg") no-repeat center;
+    background: url("../assets/facebook_grey.svg") no-repeat center;
     background-size: contain;
     margin-right: 1rem; }
   footer #ig {
     height: 1.375rem;
     width: 1.375rem;
-    background: url("/assets/instagram_grey.svg") no-repeat center;
+    background: url("../assets/instagram_grey.svg") no-repeat center;
     background-size: contain; }
   footer #ig:hover {
-    background: url("/assets/instagram_orange.svg") no-repeat center; }
+    background: url("../assets/instagram_orange.svg") no-repeat center; }
 
 #menu {
   font-family: 'Oswald', sans-serif;
