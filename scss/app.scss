@@ -33,7 +33,7 @@ header{
 
 	#headerbg {
 		// Medium Large Screen
-		@media screen and (min-width: 600px){
+		@media screen and (min-width: 480px){
 			height: inherit;
 			background: no-repeat center url('/assets/header_bg.svg');
 			position: absolute;
@@ -47,13 +47,13 @@ header{
 		background: url('/assets/logo.svg') no-repeat center;
 
 		// Small Screen
-		@media screen and (max-width: 600px){
+		@media screen and (max-width: 480px){
 		margin-left: 10px;
 		background: url('/assets/logo.svg') no-repeat left;
 		}
 
 		// Medium Large Screen
-		@media screen and (min-width: 600px){
+		@media screen and (min-width: 480px){
 			position: absolute;
 			width: 100%;
 		}
@@ -121,7 +121,7 @@ footer {
 		width: 100%;
 
 		// Medium Large Screen
-		@media screen and (min-width: 600px){
+		@media screen and (min-width: 480px){
 			justify-content: center;
 		}
 	}
@@ -136,20 +136,20 @@ footer {
 		padding-top: .625rem;
 
 		// Medium Large Screen
-		@media screen and (min-width: 600px){
+		@media screen and (min-width: 480px){
 			flex: 0 0 6rem;
 		}
 	}
 
 	// Small Screen
-	@media screen and (max-width: 600px){
+	@media screen and (max-width: 480px){
 		#random, #myBoards{
 			border-right: 1px solid rgb(150,150,150);
 		}
 	}
 
 	// Medium Large Screen
-	@media screen and (min-width: 600px){
+	@media screen and (min-width: 480px){
 		#random:after, #myBoards:after{
 			content: " \2022";
 			word-spacing: .625rem;
@@ -169,12 +169,12 @@ footer {
 	margin-top: $marginStd;
 
 	// Small Screen
-	@media screen and (max-width: 600px){
+	@media screen and (max-width: 480px){
 		margin-bottom: .125rem;
 	}
 
 	// Medium Large Screen
-	@media screen and (min-width: 600px){
+	@media screen and (min-width: 480px){
 		align-self: center;
 		flex-flow: row wrap;
 		justify-content: center;
