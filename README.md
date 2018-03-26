@@ -1,14 +1,14 @@
-#Rebirth of Reddit
+# Rebirth of Reddit
 
 Super Awesome Co. has just been asked to concept a new Reddit theme. This is super last minute but we need to come up with a few concepts to propose to them by tomorrow. This could be huge for us and really put our shop on the map. We have to drop everything at once to hit this deadline.
 
-###Game Plan
+## Game Plan
 
 Use their subreddit API to create a Reddit clone with our own theme (See the layouts in the layouts directory). We can get the JSON feed of any sub-reddit by changing adding a `.json` extension to the URL.
 
 `Ex. http://reddit.com/r/javascript -> http://reddit.com/r/javascript.json`
 
-##Objectives
+### Objectives
 
 Use the sub-reddit API to achieve the following:
 
